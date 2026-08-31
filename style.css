@@ -107,45 +107,71 @@ nav a.active {
 
 
 /* ================= HERO ================= */
-
 .home-hero,
 .page-hero,
 .contact-hero {
+    position: relative;
     min-height: 520px;
     display: flex;
     align-items: center;
     color: white;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(10,12,14,.9),
-            rgba(10,12,14,.35)
-        ),
-        url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1800&q=85")
-        center/cover;
+    overflow: hidden;
+    background: #14171a;
 }
 
 .page-hero {
-    min-height: 430px;
+    min-height: 560px;
 }
 
-.contact-hero {
-    background:
-        linear-gradient(
-            90deg,
-            rgba(10,12,14,.9),
-            rgba(10,12,14,.35)
-        ),
-        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85")
-        center/cover;
+.hero-slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
 }
 
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: heroFade 13.5s infinite;
+}
+
+.hero-slide:nth-child(1) { animation-delay: 0s; }
+.hero-slide:nth-child(2) { animation-delay: 4.5s; }
+.hero-slide:nth-child(3) { animation-delay: 9s; }
+
+@keyframes heroFade {
+    0%   { opacity: 0; }
+    4%   { opacity: 1; }
+    29%  { opacity: 1; }
+    34%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.home-hero::before,
+.page-hero::before,
+.contact-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(10,12,14,.9), rgba(10,12,14,.35));
+    z-index: 1;
+}
+
+.home-hero > .container,
+.page-hero > .container,
+.contact-hero > .container {
+    position: relative;
+    z-index: 2;
+}
 .home-hero h1,
 .page-hero h1,
 .contact-hero h1 {
-    max-width: 800px;
-    font-size: clamp(45px, 6vw, 72px);
-    line-height: 1.05;
+    max-width: 850px;
+    font-size: clamp(52px, 7vw, 80px);
+    line-height: 1.08;
     margin: 15px 0;
 }
 
@@ -190,7 +216,7 @@ nav a.active {
 }
 
 .btn-white {
-    background: white;
+    background: rgb(13, 13, 13);
     color: var(--dark);
 }
 
@@ -202,7 +228,7 @@ nav a.active {
 
 .btn-outline {
     background: transparent;
-    border: 1px solid white;
+    border: 1px solid #7693e2;
 }
 
 .center-btn {
@@ -378,7 +404,7 @@ nav a.active {
 
 .value-big {
     padding: 35px;
-    background: white;
+    background: rgb(229, 223, 223);
     border-left: 4px solid var(--orange);
 }
 
@@ -393,11 +419,11 @@ nav a.active {
 
 .dark-section {
     background: var(--dark);
-    color: white;
+    color: rgb(26, 23, 23);
 }
 
 .dark-section p {
-    color: #bfc4c7;
+    color: #090b0c;
 }
 
 .process-grid {
@@ -456,7 +482,17 @@ nav a.active {
     display: block;
     margin-top: 5px;
 }
+.section-head.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 
+.contact-details.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 .whatsapp-btn {
     display: inline-block;
     margin-top: 20px;
@@ -631,7 +667,7 @@ footer p {
     .home-hero h1,
     .page-hero h1,
     .contact-hero h1 {
-        font-size: 48px;
+        font-size: 52px;
     }
 
     .section {

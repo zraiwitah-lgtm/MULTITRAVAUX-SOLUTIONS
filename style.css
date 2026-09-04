@@ -378,7 +378,7 @@ nav a.active {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: center;
+    align-items: right;
 }
 
 .service-row.reverse img {
@@ -634,7 +634,7 @@ footer p {
 
 /* ================= MOBILE ================= */
 
-@media(max-width:800px) {
+@media(max-width:768px) {
 
     .menu-btn {
         display: block;
@@ -652,10 +652,11 @@ footer p {
         align-items: flex-start;
         gap: 20px;
         border-bottom: 1px solid var(--border);
+        z-index: 999;
     }
 
     nav.show {
-        display: flex;
+        display: flex !important;
     }
 
     .home-hero,

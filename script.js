@@ -1,9 +1,8 @@
-function toggleMenu() {
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
 
-    const nav = document.getElementById("navLinks");
-
-    if (nav) {
-        nav.classList.toggle("show");
-    }
-
-}
+    menuBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+    });
+});

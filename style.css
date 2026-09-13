@@ -630,15 +630,55 @@ footer p {
     color: #777;
     font-size: 12px;
 }
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.social-icons img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.social-icons svg {
+    width: 26px;
+    height: 26px;
+    color: #ffffff;
+}
+
+.social-icons a:hover svg,
+.social-icons a:hover img {
+    opacity: 0.75;
+}
 
 
 /* ================= MOBILE ================= */
 
-@media(max-width:768px) {
+@media(max-width:580px) {
 
     .menu-btn {
         display: block;
     }
+.logo {
+    font-size: 15px;
+    gap: 8px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.navbar > a[href="devis.html"],
+.navbar .cta-btn {
+    display: none;
+}
+
+.navbar {
+    gap: 10px;
+}
 
     nav {
         display: none;
@@ -654,6 +694,9 @@ footer p {
         border-bottom: 1px solid var(--border);
         z-index: 999;
     }
+    #navLinks .quote-btn {
+    display: none;
+}
 
     nav.show {
         display: flex !important;
@@ -664,7 +707,7 @@ footer p {
     .contact-hero {
         min-height: 500px;
     }
-
+    f
     .home-hero h1,
     .page-hero h1,
     .contact-hero h1 {
